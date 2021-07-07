@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Post Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let post of posts$ | async" >
+      <a routerLink="/detail/{{post.id}}">
+        {{post.title}}
+      </a>
+    </li>
+  </ul>
+</div>

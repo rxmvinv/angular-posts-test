@@ -1,0 +1,18 @@
+<h2>My Posts</h2>
+<div>
+  <label>Post name:
+    <input #postName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(postName.value); postName.value=''">
+    add
+  </button>
+</div>
+<ul class="posts">
+  <li *ngFor="let post of posts">
+    <a routerLink="/detail/{{post.id}}">
+      <span class="badge">{{post.id}}</span> {{post.title}}
+    </a>
+    <button class="delete" title="delete post" (click)="delete(post)">x</button>
+  </li>
+</ul>

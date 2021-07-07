@@ -1,0 +1,12 @@
+<div *ngIf="post">
+
+  <h2>{{post.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{post.id}}</div>
+  <div>
+    <label>title:
+      <input [(ngModel)]="post.title" placeholder="title"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
